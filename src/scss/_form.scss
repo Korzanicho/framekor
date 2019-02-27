@@ -1,0 +1,72 @@
+.form-group{
+    min-width: 200px;
+    position: relative;
+    margin-top: 1.4rem;
+    &.not-empty-input{
+        label{
+            top: -1.3em;
+            font-size: 0.7em;
+        }
+    }
+    input, textarea, select{
+        padding: 0.2em 0;
+        border: none;
+        border-bottom: 1px solid $color_gray;
+        outline: none;
+        min-width: inherit;
+        
+        +label{
+            position: absolute;
+            left: 0px;
+            top: 0;
+            transition: $transition-default;
+            color: $color-gray;
+        }
+        
+        &:focus{
+            border-color: $color-primary;
+            +label{
+                top: -1.3em;
+                font-size: 0.7em;
+                color: $color-primary;
+            }
+        }
+    }
+    
+    textarea{
+        resize: vertical;
+    }
+    
+}
+
+.form-radio{
+    input{
+        visibility: hidden;
+        position: absolute;
+    }
+    
+    + label{
+        position: relative;
+        padding-left: 1.3rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        &::after{
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid black;
+            border-radius: 50%;
+            left: 0;
+            top: 0.2rem;
+            content: " ";
+        }
+    }
+    
+    input:checked{
+        + label{
+            &::after{
+               border-color: red; 
+            }
+        }
+    }
+}

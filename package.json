@@ -1,0 +1,21 @@
+{
+  "name": "framekor",
+  "version": "1.0.0",
+  "description": "Frontend framework by Adrian Korzan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian Korzan",
+  "license": "ISC",
+  "devDependencies": {
+    "ansi-colors": "^3.2.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-notifier": "^5.4.0"
+  }
+}

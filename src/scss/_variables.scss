@@ -1,0 +1,24 @@
+//Zapytanie o media
+$x-small: "only screen and (max-width: 575px)";
+$small: "only screen and (min-width: 576px)";
+$medium: "only screen and (min-width: 768px)";
+$large: "only screen and (min-width: 992px)";
+$x-large: "only screen and (min-width: 1200px)";
+
+//Grid
+$max-container-width: 1300px;
+
+//Zmienne tekstowe
+$primary-font: "Open Sans", sans-serif;
+$basic-font-size: 14px;
+$basic-line-height: 1.42857;
+
+//Border
+$table-border: 2px solid black;
+
+//Kolory
+$color-primary: green;
+$color-gray: gray;
+
+//Animacje
+$transition-default: .5s all;

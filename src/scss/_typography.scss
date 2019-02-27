@@ -1,0 +1,65 @@
+:root{ /*Najwyższy element w css*/
+    font-size: $basic-font-size;
+    line-height: 1.35;
+}
+
+body{
+    font-family: $primary-font;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 300;
+}
+
+h1{font-size: 4rem};
+h2{font-size: 3.5rem};
+h3{font-size: 3rem};
+h4{font-size: 2.5rem};
+h5{font-size: 2rem};
+h6{font-size: 1.5rem};
+
+p{font-size: 1rem;}
+
+.text-right{text-align: right};
+.text-center{text-align: center};
+.text-left{text-align: left};
+.text-justify{text-align: justify;}
+.text-capitalize{text-transform: capitalize;}
+.text-uppercase{text-transform: uppercase;}
+.text-lowercase{text-transform: lowercase;}
+.text-underline{text-decoration: underline;}
+    
+ol{
+    //padding: 10px;
+    list-style-position: outside;
+    font-size: 1.1rem;
+    
+    li{
+        margin: 0.3rem 0;    
+    }
+    
+    &.list-none{
+        list-style-type: none;
+    }    
+    &.list-upper-roman{
+        list-style-type: upper-roman;
+    }
+    
+}
+
+ul{
+    //padding: 10px;
+    list-style-position: outside;
+    font-size: 1.1rem;
+
+    li{
+        margin: 0.3rem 0;  
+        span{margin-left: -0.5rem;}
+    }
+    
+    &.list-none{list-style-type: none;}
+    
+    &.list-square{list-style-type: square;}
+    
+    &.list-circle{list-style-type: circle;}
+}
