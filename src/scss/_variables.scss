@@ -17,8 +17,15 @@ $basic-line-height: 1.42857;
 $table-border: 2px solid black;
 
 //Kolory
-$color-primary: green;
 $color-gray: gray;
+$color-gray-dark: darken($color-gray, 5%);
+$color-gray-light: lighten($color-gray, 5%);
+$color-primary: green;
+$color-success: #3ec61f;
+$color-warning: #ffe32d;
+$color-danger: #e80700;
+$color-info: #38c0ff;
 
 //Animacje
 $transition-default: .5s all;
+$transition-button: .3s all;

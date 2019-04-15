@@ -40,17 +40,18 @@
 }
 
 .form-radio{
+    margin: 1rem 0;
     input{
         visibility: hidden;
         position: absolute;
-    }
     
-    + label{
+    
+     + label{
         position: relative;
         padding-left: 1.3rem;
-        margin-right: 1rem;
+        margin: .3rem 1rem .3rem 0;
         cursor: pointer;
-        &::after{
+        &::before, &::after{
             position: absolute;
             width: 1rem;
             height: 1rem;
@@ -58,14 +59,73 @@
             border-radius: 50%;
             left: 0;
             top: 0.2rem;
-            content: " ";
+            content: ' ';
+            transition: $transition-default;
         }
+     }
     }
     
     input:checked{
         + label{
+            &::before{
+               transform: scale(0.5); 
+               background: $color-primary;
+            }
             &::after{
-               border-color: red; 
+                border-color: $color-primary;
+            }
+        }
+    }
+}
+
+
+.form-checkbox{
+    margin: 1rem 0;
+    input{
+        visibility: hidden;
+        position: absolute;
+    
+    
+     + label{
+        position: relative;
+        padding-left: 1.3rem;
+        margin: .3rem 1rem .3rem 0;
+        cursor: pointer;
+        &::before{
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid black;
+            left: 0;
+            top: 0.2rem;
+            opacity: 0;
+            content: '\2714';
+            transition: $transition-default;
+            line-height: .9;
+            color: white;
+        }
+        &::after{
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            border: 2px solid black;
+            left: 0;
+            top: 0.2rem;
+            content: ' ';
+            transition: $transition-default;
+        }
+     }
+    }
+    
+    input:checked{
+        + label{
+            &::before{
+                content: "\2714";
+               background: $color-primary;
+               opacity: 1;
+            }
+            &::after{
+                border-color: $color-primary;
             }
         }
     }

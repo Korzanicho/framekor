@@ -1,0 +1,173 @@
+button, .btn{
+    cursor: pointer;
+    background: $color-gray;
+    border: 1px solid darken(grey, 5%);
+    border-radius: .3rem;
+    padding: .5rem 1rem;
+    outline: none;
+    transition: $transition-button;
+    font-family: $primary-font;
+    color: white;
+    text-decoration: none;
+
+    &:focus, &:hover{
+        background: darken(grey, 5%);
+        color: white;
+    }
+
+    &:active{
+        transform: scale(.95);
+    }
+}
+
+
+.btn-primary{
+    background: $color-primary;
+    border: 1px solid transparent;
+    border-color: darken($color-primary, 5%);
+    color: white;
+
+    &:focus, &:hover{
+        background: darken($color-primary, 5%);
+        color: white;
+    }
+}
+.btn-success{
+    background: $color-success;
+    border: 1px solid transparent;
+    border-color: darken($color-success, 5%);
+    color: white;
+
+    &:focus, &:hover{
+        background: darken($color-success, 5%);
+        color: white;
+    }
+}
+.btn-warning{
+    background: $color-warning;
+    border-color: darken($color-warning, 5%);
+    border: 1px solid transparent;
+    color: white;
+
+    &:focus, &:hover{
+        background: darken($color-warning, 12%);
+        color: white;
+    }
+}
+.btn-danger{
+    background: $color-danger;
+    border-color: darken($color-danger, 5%);
+    border: 1px solid transparent;
+    color: white;
+
+    &:focus, &:hover{
+        background: darken($color-danger, 5%);
+        color: white;
+    }
+}
+.btn-info{
+    background: $color-info;
+    border-color: darken($color-info, 5%);
+    border: 1px solid transparent;
+    color: white;
+
+    &:focus, &:hover{
+        background: darken($color-info, 5%);
+        color: white;
+    }
+}
+
+// Bordered
+
+.btn-bordered{
+    border: 1px solid black;
+}
+
+button.btn-bordered{
+    border-color: grey;
+    color: grey;
+    background: none;
+    &:focus, &:hover{
+        background: grey;
+        color: white;
+    }
+}
+
+.btn-primary.btn-bordered{
+    border-color: darken($color-primary, 5%);
+    color: $color-primary;
+    background: none;
+
+    &:focus, &:hover{
+        background: $color-primary;
+        color: white;
+    }
+}
+.btn-success.btn-bordered{
+    border-color: darken($color-success, 5%);
+    color: $color-success;
+    background: none;
+
+    &:focus, &:hover{
+        background: $color-success;
+        color: white;
+    }
+}
+.btn-warning.btn-bordered{
+    border-color: darken($color-warning, 5%);
+    color: $color-warning;
+    background: none;
+
+    &:focus, &:hover{
+        background: $color-warning;
+        color: white;
+    }
+}
+.btn-danger.btn-bordered{
+    border-color: darken($color-danger, 5%);
+    color: $color-danger;
+    background: none;
+
+    &:focus, &:hover{
+        background: $color-danger;
+        color: white;
+    }
+}
+.btn-info.btn-bordered{
+    border-color: darken($color-info, 5%);
+    color: $color-info;
+    background: none;
+
+    &:focus, &:hover{
+        background: $color-info;
+        color: white;
+    }
+}
+
+//Size
+
+.btn-sm{
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+}
+
+.btn-lg{
+    font-size: 1.5rem;
+    padding: .6rem 1.5rem;
+}
+
+// Rozciągniety na 100%
+.btn-fw{
+    width: 100%;
+}
+
+//Cień
+.btn-shadow{
+    box-shadow: 0 0 5px grey;
+    &:active{
+        box-shadow: none;
+    }
+}
+
+
+
