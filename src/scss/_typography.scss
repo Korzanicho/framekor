@@ -1,6 +1,6 @@
 :root{ /*Najwyższy element w css*/
     font-size: $basic-font-size;
-    line-height: 1.35;
+    line-height: $basic-line-height;
 }
 
 body{

@@ -1,15 +1,21 @@
 .primary{
     background: $color-primary;
+    color: white;
+    box-shadow: $color-primary;
 }
 .success{
     background: $color-success;
+    color: white;
 }
 .warning{
     background: $color-warning;
+    color: white;
 }
 .danger{
     background: $color-danger;
+    color: white;
 }
 .info{
     background: $color-info;
+    color: white;
 }

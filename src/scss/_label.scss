@@ -6,4 +6,8 @@
     color: white;
     position: relative;
     bottom: .1em;
+
+    &:empty{
+        display: none;
+    }
 }
