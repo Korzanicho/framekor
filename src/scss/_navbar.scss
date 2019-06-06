@@ -1,9 +1,29 @@
 .navbar{
-	background: #000;
+	background: $color-navbar-bg;
 	color: white;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	transition: $transition-default;
+
+	.container{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: $max-container-width - 2*$grid-padding;
+	}
+
+	&.compact{
+		font-size: 0.8em;
+	}
+
+	&.fixed{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		overflow: auto;
+		max-height: 100%;
+	}
 
 	a{
 		color: white;
@@ -30,12 +50,22 @@
 
 		li{
 			margin: 0;
+			&.dropdown{
+				ul{
+					list-style: none;
+					display: none;
+					flex-direction: column;
+				}
+			}
 		}
 	}
 }
 
 @media only screen and (min-width: 768px){
 	.navbar{
+		&.fixed{
+			overflow: initial;
+		}
 		a.navbar__mobile-menu-button{
 			display: none;
 		}
@@ -44,11 +74,27 @@
 			flex-direction: row;
 			flex-wrap: wrap;
 			width: auto;
-			justify-content: space-around;
+			justify-content: space-between;
+
+			li{
+				flex-grow: 1;
+
+				&.dropdown{
+					position: relative;
+					ul{
+						min-width: 100%;
+						padding: 0;
+						background: $color-navbar-bg;
+						position: absolute;
+						right: 0;
+					}
+				}
+			}
 		}
 
 		&.centered{
 			justify-content: space-around;
+			text-align: center;
 			.navbar__logo{
 				font-weight: 700;
 			}

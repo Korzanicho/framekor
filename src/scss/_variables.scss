@@ -7,6 +7,7 @@ $x-large: "only screen and (min-width: 1200px)";
 
 //Grid
 $max-container-width: 1300px;
+$grid-padding: 10px;
 
 //Zmienne tekstowe
 $primary-font: "Open Sans", sans-serif;
@@ -25,6 +26,7 @@ $color-success: #3ec61f;
 $color-warning: #ffe32d;
 $color-danger: #e80700;
 $color-info: #38c0ff;
+$color-navbar-bg: black;
 
 //Animacje
 $transition-default: .4s all;

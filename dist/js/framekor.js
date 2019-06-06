@@ -31,7 +31,8 @@
     for(let alert of alerts){
         alert.insertAdjacentHTML('beforeend','<button class="close">&times;</button>');
         let closeBtn = alert.querySelector(".close");
-        closeBtn.addEventListener("click", function(){
+        closeBtn.addEventListener("click", function(e){
+            e.preventDefault();
             if(!alert.classList.contains("modal")){
                 alert.className += " dismissed";
                 setTimeout(function(){
@@ -131,19 +132,59 @@
 //Nav
 (function navbar(){
     let navbarMobileMenuButtons = document.querySelectorAll("a.navbar__mobile-menu-button");
-    console.log(navbarMobileMenuButtons);
     for(let navbarMobileMenuButton of navbarMobileMenuButtons){
         navbarMobileMenuButton.addEventListener("click", function(e){
             e.preventDefault();
             let menu = document.querySelector(navbarMobileMenuButton.getAttribute("data-menu-id"));
 
-            if(getComputedStyle(menu).display === "none"){
-                menu.style.display = "flex";
+            toogleFlex(menu);
+        });
+    }
+
+    let setBodyMargin = (function setBodyMarginFunction(){
+        if(document.querySelector(".navbar.fixed") !== null){
+            let navbarFixed = document.querySelector(".navbar.fixed");
+            document.querySelector("body").style.marginTop = navbarFixed.clientHeight+10+"px";
+        }
+        return setBodyMarginFunction;
+    })();
+    window.addEventListener("resize", function(){
+        setBodyMargin();
+    });
+
+    window.addEventListener("scroll", function(){
+
+        if(document.querySelector(".navbar.fixed") !== null){
+            if(window.scrollY > 50){
+                document.querySelector(".navbar.fixed").classList.add("compact");
             }
             else{
-                menu.style.display = null;
+                document.querySelector(".navbar.fixed").classList.remove("compact");
             }
+        };
+    });
+
+})();
+
+// DROPDOWN
+(function dropdown(){
+    let dropdownMenus = document.querySelectorAll(".dropdown");
+    for(let dropdownMenu of dropdownMenus){
+        let dropdownMenuButton = dropdownMenu.querySelector(".dropdown-menu-button");
+        dropdownMenuButton.addEventListener("click", function(e){
+            e.preventDefault();
+            let menu = dropdownMenu.querySelector(".dropdown-menu");
+            toogleFlex(menu);
         });
     }
 })();
+
+function toogleFlex(element){
+    if(getComputedStyle(element).display === "none"){
+        element.style.display = "flex";
+    }
+    else{
+        element.style.display = null;
+    }
+}
 

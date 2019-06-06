@@ -1,24 +1,32 @@
 .container{
     max-width: $max-container-width;
     margin: 0 auto;
+    padding: $grid-padding;
 }
 
 .container-fluid{
+    padding: $grid-padding;
     width: 100%;
     margin: 0 auto;
 }
 
-
 .row{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    min-height: 100%;
 }
 
-.row-align-center{
-    align-items: center; //wyśrodkowanie w pionie
-}
+.row .row{margin: -$grid-padding}
+
+.align-center{align-items: center;}
+.align-top{align-items: flex-start;}
+.align-bottom{align-items: flex-end;}
+.align-strech{align-items: stretch;}
+
+.justify-space-between{justify-content: space-between;}
+.justify-space-around{justify-content: space-around;}
+.justify-left{justify-content: flex-start;}
+.justify-right{justify-content: flex-end;}
+.justify-center{justify-content: center;}
 
 [class*="col-"]{width: 100%;}
 
