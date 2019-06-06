@@ -1,3 +1,4 @@
+// Form
 (function inputLabelUpDown(){
     let formInputs = document.querySelectorAll('.form-group');
     for(let formInput of formInputs){
@@ -23,20 +24,26 @@
     }
 })();
 
+
+// Alert
 (function alertDismissable(){
     let alerts = document.querySelectorAll(".dismissable");
     for(let alert of alerts){
         alert.insertAdjacentHTML('beforeend','<button class="close">&times;</button>');
         let closeBtn = alert.querySelector(".close");
         closeBtn.addEventListener("click", function(){
-            alert.className += " dismissed";
-            setInterval(function(){
-                alert.style.display = "none";
-            }, 1000);
+            if(!alert.classList.contains("modal")){
+                alert.className += " dismissed";
+                setTimeout(function(){
+                    alert.style.display = "none";
+                }, 1000);
+            }
         });
     }
 })();
 
+
+// Tab
 (function tab(){
     let tabs = document.querySelectorAll(".tab");
     for(let tab of tabs){
@@ -74,6 +81,69 @@
             let activeBodyItem = tab.querySelector(".tab__body " + activeTab.getAttribute("href"));
                             activeBodyItem.classList.add('show');
                         }
+    }
+})();
+
+
+// POPUP
+(function popUp(){
+    let modalsBtns = document.querySelectorAll("[data-modal]");
+    for(let modal of modalsBtns){
+        let modalId = modal.getAttribute("data-modal");
+        modal.addEventListener("click", function(e){
+            e.preventDefault();
+            document.querySelector("body").style.overflow = "hidden";
+            document.querySelector(`#${modalId}`).style.display = "flex";
+
+            setTimeout(function(){
+                document.querySelector(`#${modalId}`).classList.add("show");
+                setTimeout(function(){
+                    if(document.querySelector(".modal .close")){
+                        let modalBody = document.querySelector(".modal__body");
+                        let modalClose = document.querySelector(".modal .close");
+                        let fromTopToModal = modalBody.getBoundingClientRect().top;
+                        let fromRightToModal = modalBody.getBoundingClientRect().left;
+                        modalClose.style.top = `${fromTopToModal+10}px`;
+                        modalClose.style.right =  `${fromRightToModal+10}px`;
+                    }
+                },299);
+            }, 1)
+            
+        });
+    }
+    let modals = document.querySelectorAll(".modal");
+    for(let modal of modals){
+        let closeModal = modal.querySelector(".modal .close");
+        closeModal.addEventListener("click", function(e){
+            e.preventDefault();
+            modal.classList.remove("show");
+            document.querySelector("body").style.overflow = "auto";
+
+            setTimeout(function(){
+                modal.style.display = "none";
+            },300);
+        });
+    }
+
+})();
+
+
+//Nav
+(function navbar(){
+    let navbarMobileMenuButtons = document.querySelectorAll("a.navbar__mobile-menu-button");
+    console.log(navbarMobileMenuButtons);
+    for(let navbarMobileMenuButton of navbarMobileMenuButtons){
+        navbarMobileMenuButton.addEventListener("click", function(e){
+            e.preventDefault();
+            let menu = document.querySelector(navbarMobileMenuButton.getAttribute("data-menu-id"));
+
+            if(getComputedStyle(menu).display === "none"){
+                menu.style.display = "flex";
+            }
+            else{
+                menu.style.display = null;
+            }
+        });
     }
 })();
 

@@ -30,9 +30,8 @@ p{font-size: 1rem;}
 .text-underline{text-decoration: underline;}
     
 ol{
-    //padding: 10px;
-    list-style-position: outside;
-    font-size: 1.1rem;
+    padding: 0 0 0 .5rem;
+    list-style-position: inside;
     
     li{
         margin: 0.3rem 0;    
@@ -48,9 +47,8 @@ ol{
 }
 
 ul{
-    //padding: 10px;
-    list-style-position: outside;
-    font-size: 1.1rem;
+    padding: 0 0 0 .5rem;
+    list-style-position: inside;
 
     li{
         margin: 0.3rem 0;  
